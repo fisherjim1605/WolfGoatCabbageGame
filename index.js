@@ -1,3 +1,26 @@
+//Canvas scripts for canvas stored in the index.js as to not overcrowd index.html file
+var canvas = document.getElementById("gameCanvas");
+var context = canvas.getContext("2d");
+
+var wolfImage = document.getElementById("wolf");
+var goatImage = document.getElementById("goat");
+var cabbageImage = document.getElementById("cabbage");
+
+context.drawImage(wolfImage, 10, 10);
+context.drawImage(goatImage, 10, 10);
+context.drawImage(cabbageImage, 10, 10);
+
+function getImage(image) {
+    alert(image.alt);
+}
+
+/*
+context.beginPath();
+context.rect(20, 40, 50, 50);
+context.fillStyle = "#FF0000";
+context.fill();
+context.closePath();
+
 let Boat = class Boat {
     constructor() {
         this.passenger = 'EMPTY';
@@ -26,6 +49,7 @@ boat.passenger = passenger;
 alert(boat.passenger);
 alert(boat.isEmpty);
 
+
 function myKeyPress(e) {
     e = e || window.event;
 
@@ -46,4 +70,5 @@ function myKeyPress(e) {
        // right arrow
     }
 }
+*/
 
