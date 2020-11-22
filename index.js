@@ -28,45 +28,16 @@ boat.image.style.position = "relative";
 boat.image.style.left = "0px";
 
 function getImage(image) {
-    //alert(image.alt);
     moveImage(image.alt);
 }
 
 function moveImage(imageName) {
-    //Take current image and its left offset, and add 20 pixels to move it right
     if(imageName == "Wolf") {
         checkPositions(wolf);
-        /*
-        if(wolfCrossed) {
-            wolfImage.style.left = "0px";
-            wolfCrossed = false;
-        } else {
-            wolfImage.style.left = "300px";
-            wolfCrossed = true;
-        }
-        */
     } else if(imageName == "Goat") {
         checkPositions(goat);
-        /*
-        if(goatCrossed) {
-            goatImage.style.left = "0px";
-            goatCrossed = false;
-        } else {
-            goatImage.style.left = "300px";
-            goatCrossed = true;
-        }
-        */
     } else if (imageName == "Cabbage") {
         checkPositions(cabbage);
-        /*
-        if(cabbageCrossed) {
-            cabbageImage.style.left = "0px";
-            cabbageCrossed = false;
-        } else {
-            cabbageImage.style.left = "300px";
-            cabbageCrossed = true;
-        }
-        */
     } else if (imageName == "Boat") {
         moveBoat();
     }
@@ -97,11 +68,6 @@ function checkPositions(passenger) {
 }
 
 function checkGameState() {
-    console.log("WOLF CROSSED: " + wolf.crossed);
-    console.log("GOAT CROSSED: " + goat.crossed);
-    console.log("CABBAGE CROSSED: " + cabbage.crossed);
-    console.log("BOAT CROSSED: " + boat.crossed);
-
     //CABBAGE, BOAT | WOLF, GOAT
     if(wolf.crossed && goat.crossed && (!cabbage.crossed) && (!boat.crossed)) {
         alert("Failure: Wolf ate the Goat");
