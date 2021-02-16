@@ -1,7 +1,7 @@
 #main {
     text-align: center;
-    background:whitesmoke;
-    width:520px;
+    background: palegoldenrod;
+    width: 1100px;
     padding: 2px;
     border: 3px solid black
   }
@@ -9,35 +9,62 @@
 #title {
     text-align: center;
     background:tan;
-    width:500px;
-    height:auto;
-    padding:5px;
+    width: auto;
+    height: auto;
+    padding: 5px;
     border: 3px solid black;
     
   }
 
+#game {
+  text-align: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+  padding: 2px;
+  gap: 3px
+}
+
 #gameview {
+    flex: 2;
     text-align: left;
-    background:url(river.png);
-    width:500px;
+    background: url(river.png);
+    width: 500px;
     height:420px;
-    padding:5px;
+    padding: 5px;
     border: 3px solid black;
   }
 
-#options {
-    display:inline-block;
+#diagramview {
+    flex: 2;
+    display: inline-block;
+    background: whitesmoke;
+    width: 500px;
+    height: 420px;
+    padding: 5px;
+    border: 3px solid black;
 }
 
-#exitGame {
-    float:left;
-    padding: 20px;
+#options {
+    display: inline-block;
 }
 
 #reset {
-    float:left;
+  float: left;
+  padding: 20px;
+}
+
+#controls {
+  float: left;
+  padding: 20px;
+}
+
+#exitGame {
+    float: right;
     padding: 20px;
 }
+
 
 #popup {
   position: relative;

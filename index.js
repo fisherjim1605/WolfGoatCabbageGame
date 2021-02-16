@@ -111,3 +111,7 @@ function resetGame() {
     alert("Game Reset");
 }
 
+function showControls() {
+    
+}
+
