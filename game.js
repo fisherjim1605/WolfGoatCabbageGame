@@ -1,4 +1,8 @@
 //Objects to store passenger data
+let state = 0;
+let state_img = document.getElementById("state_image");
+state_img.src = "state0.png";
+
 let wolf = {
     image: document.getElementById("wolf"),
     crossed: false
@@ -34,12 +38,16 @@ function getImage(image) {
 function moveImage(imageName) {
     if(imageName == "Wolf") {
         checkPositions(wolf);
+        checkCurrentState("wolf");
     } else if(imageName == "Goat") {
         checkPositions(goat);
+        checkCurrentState("goat");
     } else if (imageName == "Cabbage") {
         checkPositions(cabbage);
+        checkCurrentState("cabbage");
     } else if (imageName == "Boat") {
         moveBoat();
+        checkCurrentState("boat");
     }
     checkGameState();
 }
@@ -68,29 +76,201 @@ function checkPositions(passenger) {
 }
 
 function checkGameState() {
-    //CABBAGE, BOAT | WOLF, GOAT
-    if(wolf.crossed && goat.crossed && (!cabbage.crossed) && (!boat.crossed)) {
+    if(state == 3 || state == 13) {
         alert("Failure: Wolf ate the Goat");
         resetGame();
-        
-    //WOLF, GOAT | CABBAGE, BOAT 
-    } else if((!wolf.crossed) && (!goat.crossed) && cabbage.crossed && boat.crossed) {
-       alert("Failure: Wolf ate the Goat");
-       resetGame();
-
-    //WOLF, BOAT | GOAT, CABBAGE
-    } else if((!wolf.crossed) && goat.crossed && cabbage.crossed && (!boat.crossed)) {
+    } else if(state == 2 || state == 7) {
         alert("Failure: Goat ate the Cabbage");
         resetGame();
-
-    //GOAT, CABBAGE | WOLF, BOAT
-    } else if(wolf.crossed && (!goat.crossed) && (!cabbage.crossed) && boat.crossed) {
-        alert("Failure: Goat ate the Cabbage");
-        resetGame();
-    //PUZZLE SOLVED
-    } else if(wolf.crossed && goat.crossed && cabbage.crossed && boat.crossed) {
+    } else if(state == 11) {
         alert("Success!");
         resetGame();
+    }
+}
+
+function checkCurrentState(name) {
+    console.log(name);
+    switch(state) {
+        case 0:
+            switch(name) {
+                case "boat":
+                    state = 1;
+                    state_img.src = "state1.png";
+                    break;
+                case "cabbage":
+                    state = 3;
+                    state_img.src = "state3.png";
+                    break;
+                case "goat":
+                    state = 4;
+                    state_img.src = "state4.png";
+                    break;                
+                case "wolf":
+                    state = 2;
+                    state_img.src = "state2.png";
+                    break;
+                default: 
+                    break;
+            }
+            break;
+            
+        case 1:
+            switch(name) {
+                case "boat":
+                    state = 0;
+                    state_img.src = "state0.png";
+                    break;
+                default: 
+                    break;
+            }
+            break;
+        case 4:
+            switch(name) {
+                case "boat":
+                    state = 5;
+                    state_img.src = "state5.png";
+                    break;
+                case "goat":
+                    state = 0;
+                    state_img.src = "state0.png";
+                    break;        
+                default: 
+                    break;
+            }
+            break;
+            
+        case 5:
+            switch(name) {
+                case "boat":
+                    state = 4;
+                    state_img.src = "state4.png";
+                    break;
+                case "cabbage":
+                    state = 6;
+                    state_img.src = "state6.png";
+                    break;               
+                case "wolf":
+                    state = 12;
+                    state_img.src = "state12.png";
+                    break;
+                default: 
+                    break;
+            }
+            break;
+            
+        case 6:
+            switch(name) {
+                case "boat":
+                    state = 7;
+                    state_img.src = "state7.png";
+                    break;
+                case "goat":
+                    state = 8;
+                    state_img.src = "state8.png";
+                    break;  
+                case "cabbage":
+                    state = 5;
+                    state_img.src = "state5.png";
+                    break;       
+                default: 
+                    break;
+            }
+            break;
+            
+        case 8:
+            switch(name) {
+                case "boat":
+                    state = 2;
+                    state_img.src = "state2.png";
+                    break;
+                case "goat":
+                    state = 4;
+                    state_img.src = "state4.png";
+                    break;                
+                case "wolf":
+                    state = 9;
+                    state_img.src = "state9.png";
+                    break;
+                default: 
+                    break;
+            }
+            break;
+
+        case 9:
+            switch(name) {
+                case "boat":
+                    state = 10;
+                    state_img.src = "state10.png";
+                    break;
+                case "cabbage":
+                    state = 14;
+                    state_img.src = "state14.png";
+                    break;           
+                case "wolf":
+                    state = 8;
+                    state_img.src = "state8.png";
+                    break;
+                default: 
+                    break;
+            }
+            break;
+            
+        case 10:
+            switch(name) {
+                case "boat":
+                    state = 9;
+                    state_img.src = "state9.png";
+                    break;
+                case "goat":
+                    state = 11;
+                    state_img.src = "state11.png";
+                    break;           
+                default: 
+                    break;
+            }
+            break;            
+            
+        case 12:
+            switch(name) {
+                case "boat":
+                    state = 13;
+                    state_img.src = "state13.png";
+                    break;
+                case "goat":
+                    state = 14;
+                    state_img.src = "state14.png";
+                    break;                 
+                case "wolf":
+                    state = 5;
+                    state_img.src = "state5.png";
+                    break;  
+                default: 
+                    break;
+            }
+            break;            
+            
+        case 14:
+            switch(name) {
+                case "boat":
+                    state = 3;
+                    state_img.src = "state3.png";
+                    break;
+                case "cabbage":
+                    state = 9;
+                    state_img.src = "state9.png";
+                    break;
+                case "goat":
+                    state = 12;
+                    state_img.src = "state12.png";
+                    break;   
+                default: 
+                    break;
+            }
+            break;
+
+        default:
+            break;
+
     }
 }
 
@@ -107,6 +287,9 @@ function resetGame() {
     
     boat.image.style.left = "0px";
     boat.crossed = false;
+
+    state = 0;
+    state_img.src = "state0.png";
 
     alert("Game Reset");
 }
