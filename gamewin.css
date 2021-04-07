@@ -1,0 +1,45 @@
+#main {
+    text-align: center;
+    position: relative;
+    background: palegoldenrod;
+    width: 1100px;
+    height: 625px;
+    padding: 2px;
+    border: 3px solid black;
+    font-family: "Sans-serif", Arial, Helvetica, sans-serif
+  }
+
+#title {
+    text-align: center;
+    background:tan;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    border: 3px solid black;    
+  }
+
+#winBlock {
+    display: inline-block;
+    text-align: center;
+    background:beige;
+    border: 3px solid black;  
+    padding: 15px;
+    width: 400px;
+    height: 375px;
+}
+
+#options {
+    display: inline-block;
+}
+
+#exitWin {
+    float: left;
+    padding: 20px;
+
+}
+
+#playGame {
+    float: left;
+    padding: 20px;
+
+}

@@ -77,14 +77,13 @@ function checkPositions(passenger) {
 
 function checkGameState() {
     if(state == 3 || state == 13) {
-        alert("Failure: Wolf ate the Goat");
-        resetGame();
+        localStorage.setItem("gameover", "WOLF ATE THE GOAT! GAME OVER!");
+        window.location.assign("gameover.html");
     } else if(state == 2 || state == 7) {
-        alert("Failure: Goat ate the Cabbage");
-        resetGame();
+        localStorage.setItem("gameover", "GOAT ATE THE CABBAGE! GAME OVER!");
+        window.location.assign("gameover.html");
     } else if(state == 11) {
-        alert("Success!");
-        resetGame();
+        window.location.assign("gamewin.html");
     }
 }
 
@@ -292,9 +291,5 @@ function resetGame() {
     state_img.src = "state0.png";
 
     alert("Game Reset");
-}
-
-function showControls() {
-    
 }
 
