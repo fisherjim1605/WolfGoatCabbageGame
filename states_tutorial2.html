@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="states_tutorial.css">
+        <title>Wolf, Goat & Cabbage Game</title>
+    </head>
+    <body>
+        <div id="main">
+            <div id="title">
+                <h1>WOLF, GOAT & CABBAGE GAME</h1>
+            </div>
+
+            <br/><br/>
+
+
+            <div id="infoBlock">
+                <div>
+                    <h><b>LABELED STATE TRANSITIONS</b></h>
+                </div>
+                <div id="info">
+                    <p>We can also use an LST to solve the Wolf, Goat & Cabbage puzzle:</p> 
+                    <ul>
+                        <li>The <b>states</b> will be <b>whatever side of the river the animals, cabbage and boat are on</b></li>
+                        <li>The <b>transition (action)</b> will be <b>what is crossing the river at that time</b></li>
+                    </ul>
+                    <p>On the right is a section from the LST of the game:</p>                    
+                    <ul>
+                        <li>We start in <b>State 0</b> (S0 in the diagram)</li>
+                        <li><b>Moving the wolf</b> puts us in State 3 (S3)</li>
+                        <li><b>S3 is an End State</b> because the goat then eats the cabbage and <b>no more moves can be made</b></li>
+                        <li>Looking back to S0, <b>moving the goat</b> puts us in <b>State 4</b> (S4)</li>
+                        <li>From S4, we can <b>move the goat back</b> to the other side to go <b>back to S0</b></li>
+                    </ul>
+                </div>            
+                <div id="exampleDiagram">
+                    <img src="state_example.PNG" width="450" height="200">
+                </div> 
+            </div>   
+
+            </br>
+            
+            <div id="options">  
+                <div id="exitControls">                    
+                    <form action="menu.html">
+                        <input type="submit" value="Back to Menu" />
+                    </form> 
+                </div>  
+                  
+                <div id="backButton">                  
+                    <form action="states_tutorial1.html">
+                        <input type="submit" value="Next" />
+                    </form> 
+                </div>                                  
+            </div>   
+        </div>
+    </body>
+</html>

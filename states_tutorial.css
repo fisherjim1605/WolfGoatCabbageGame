@@ -41,7 +41,7 @@
     padding: 10px;
 }
 
-#catchDiagram {
+#exampleDiagram {
     float: left;
     padding: 10px;
 }
@@ -49,14 +49,17 @@
     display: inline-block;
 }
 
-#exitControls {
+#exitStates {
     float: left;
     padding: 20px;
-
 }
 
-#playGame {
+#nextButton {
     float: left;
     padding: 20px;
+}
 
+#backButton {
+    float: left;
+    padding: 20px;
 }
