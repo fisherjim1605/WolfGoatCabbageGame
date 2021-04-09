@@ -3,6 +3,11 @@ let state = 0;
 let state_img = document.getElementById("state_image");
 state_img.src = "state0.png";
 
+//Variables to control audio
+let muteButton = document.getElementById("muteButton");
+let audio = document.getElementById("backgroundAudio");
+audio.volume = 0.1;
+
 //Objects to store passenger data
 let wolf = {
     image: document.getElementById("wolf"),
@@ -31,12 +36,6 @@ let boat = {
 };
 boat.image.style.position = "relative";
 boat.image.style.left = "0px";
-
-/*
-function getImage(image) {
-    moveImage(image.alt);
-}
-*/
 
 function moveImage(image) {
     imageName = image.alt;
@@ -297,3 +296,12 @@ function resetGame() {
     //alert("Game Reset");
 }
 
+function muteAudio() {
+    if(audio.muted == true) {
+        audio.muted = false;
+        muteButton.value = "Mute Sound";
+    } else {
+        audio.muted = true;
+        muteButton.value = "Unmute Sound";
+    }
+}
