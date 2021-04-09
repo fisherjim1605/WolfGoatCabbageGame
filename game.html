@@ -17,13 +17,13 @@
             <div id="game">
                 <div id="gameview">
                     <form>
-                        <img id="wolf" src="wolf.png" alt="Wolf" onclick="getImage(this)" width="100" height="100">
+                        <img id="wolf" src="wolf.png" alt="Wolf" onclick="moveImage(this)" width="100" height="100">
                         <br/>
-                        <img id="goat" src="goat.png" alt="Goat" onclick="getImage(this)" width="100" height="100">
+                        <img id="goat" src="goat.png" alt="Goat" onclick="moveImage(this)" width="100" height="100">
                         <br/>
-                        <img id="cabbage" src="cabbage.png" alt="Cabbage" onclick="getImage(this)" width="100" height="100">
+                        <img id="cabbage" src="cabbage.png" alt="Cabbage" onclick="moveImage(this)" width="100" height="100">
                         <br/>
-                        <img id="boat" src="boat.png" alt="Boat" onclick="getImage(this)" width="150" height="100">
+                        <img id="boat" src="boat.png" alt="Boat" onclick="moveImage(this)" width="150" height="100">
                         <br/>
                     </form>
                 </div>  
@@ -38,17 +38,22 @@
             <div id="options">  
                 <div id="reset">
                     <input type="button" value="Reset" onclick="resetGame()">    
-                </div>            
-                <div id="exitGame">
-                    <form action="menu.html">
-                        <input type="submit" value="Back to Menu" />
-                    </form>
-                </div>
+                </div>         
                 <div id="controls">
                     <form action="tutorial1.html">
-                        <input type="submit" value="Controls" />
+                        <input type="submit" value="Controls"/>
                     </form>
-                </div>                                    
+                </div>     
+                <div id="learnMore">
+                    <form action="states_tutorial1.html">
+                        <input type="submit" value="Learn More"/>
+                    </form>
+                </div>      
+                <div id="exitGame">
+                    <form action="menu.html">
+                        <input type="submit" value="Back to Menu"/>
+                    </form>
+                </div>                            
             </div>   
         </div>
         <script src="game.js"></script>

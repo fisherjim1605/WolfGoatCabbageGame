@@ -1,8 +1,9 @@
-//Objects to store passenger data
+//Variables to store current game state and diagram
 let state = 0;
 let state_img = document.getElementById("state_image");
 state_img.src = "state0.png";
 
+//Objects to store passenger data
 let wolf = {
     image: document.getElementById("wolf"),
     crossed: false
@@ -31,11 +32,14 @@ let boat = {
 boat.image.style.position = "relative";
 boat.image.style.left = "0px";
 
+/*
 function getImage(image) {
     moveImage(image.alt);
 }
+*/
 
-function moveImage(imageName) {
+function moveImage(image) {
+    imageName = image.alt;
     if(imageName == "Wolf") {
         checkPositions(wolf);
         checkCurrentState("wolf");
@@ -290,6 +294,6 @@ function resetGame() {
     state = 0;
     state_img.src = "state0.png";
 
-    alert("Game Reset");
+    //alert("Game Reset");
 }
 
