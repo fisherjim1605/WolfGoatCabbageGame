@@ -91,7 +91,6 @@ function checkGameState() {
 }
 
 function checkCurrentState(name) {
-    console.log(name);
     switch(state) {
         case 0:
             switch(name) {
@@ -100,16 +99,16 @@ function checkCurrentState(name) {
                     state_img.src = "state1.png";
                     break;
                 case "cabbage":
-                    state = 3;
-                    state_img.src = "state3.png";
+                    state = 2;
+                    state_img.src = "state2.png";
                     break;
                 case "goat":
                     state = 4;
                     state_img.src = "state4.png";
                     break;                
                 case "wolf":
-                    state = 2;
-                    state_img.src = "state2.png";
+                    state = 3;
+                    state_img.src = "state3.png";
                     break;
                 default: 
                     break;
@@ -186,8 +185,8 @@ function checkCurrentState(name) {
                     state_img.src = "state2.png";
                     break;
                 case "goat":
-                    state = 4;
-                    state_img.src = "state4.png";
+                    state = 6;
+                    state_img.src = "state6.png";
                     break;                
                 case "wolf":
                     state = 9;
