@@ -79,10 +79,10 @@ function checkPositions(passenger) {
 }
 
 function checkGameState() {
-    if(state == 3 || state == 13) {
+    if(state == 2 || state == 13) {
         localStorage.setItem("gameover", "WOLF ATE THE GOAT! GAME OVER!");
         window.location.assign("gameover.html");
-    } else if(state == 2 || state == 7) {
+    } else if(state == 3 || state == 7) {
         localStorage.setItem("gameover", "GOAT ATE THE CABBAGE! GAME OVER!");
         window.location.assign("gameover.html");
     } else if(state == 11) {
