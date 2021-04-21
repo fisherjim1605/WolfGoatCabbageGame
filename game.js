@@ -297,8 +297,6 @@ function resetGame() {
 
     state = 0;
     state_img.src = "state0.png";
-
-    //alert("Game Reset");
 }
 
 function muteAudio() {
