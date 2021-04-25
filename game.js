@@ -9,6 +9,8 @@ let audio = document.getElementById("backgroundAudio");
 audio.volume = 0.1;
 
 //Objects to store passenger data
+//image: The image element in game.html
+//crossed: What side of the river the entity is on (false = left, true = right) 
 let wolf = {
     image: document.getElementById("wolf"),
     crossed: false
@@ -37,6 +39,12 @@ let boat = {
 boat.image.style.position = "relative";
 boat.image.style.left = "0px";
 
+/**
+ * Check which entity has been clicked and pass the correct object
+ * to the appropriate method and checkCurrentState
+ * 
+ * @param {HTMLElement} image Image object that has been clicked
+ */
 function moveImage(image) {
     imageName = image.alt;
     if(imageName == "Wolf") {
@@ -55,6 +63,9 @@ function moveImage(image) {
     checkGameState();
 }
 
+/**
+ * Move the boat image in game.html
+ */
 function moveBoat() {
     if(boat.crossed) {
         boat.image.style.left = "0px";
@@ -65,6 +76,11 @@ function moveBoat() {
     }
 }
 
+/**
+ * Check the position of the selected entity and move it to the correct side
+ * 
+ * @param {object} passenger The entity object that is being moved
+ */
 function checkPositions(passenger) {
     if(passenger.crossed == boat.crossed) { //Check if boat is same side
         moveBoat();
@@ -78,6 +94,9 @@ function checkPositions(passenger) {
     }
 }
 
+/**
+ * Checks the current state to determine whether the game has ended or not
+ */
 function checkGameState() {
     if(state == 2 || state == 13) {
         localStorage.setItem("gameover", "WOLF ATE THE GOAT! GAME OVER!");
@@ -96,6 +115,12 @@ function checkGameState() {
     }
 }
 
+/**
+ * Checks the current game state and the entity that is being moved to determine
+ * what the new state is and update the state diagram accordingly
+ * 
+ * @param {string} name The name of the entity that is being moved
+ */
 function checkCurrentState(name) {
     switch(state) {
         case 0:
@@ -281,7 +306,10 @@ function checkCurrentState(name) {
     }
 }
 
-
+/**
+ * Moves all entities back to the left side of the river and resets the state
+ * back to S0
+ */
 function resetGame() {    
     wolf.crossed = false;
     wolf.image.style.left = "0px";
@@ -299,6 +327,9 @@ function resetGame() {
     state_img.src = "state0.png";
 }
 
+/**
+ * Mutes/unmutes the background music depending on the current state of the audio
+ */
 function muteAudio() {
     if(audio.muted == true) {
         audio.muted = false;
