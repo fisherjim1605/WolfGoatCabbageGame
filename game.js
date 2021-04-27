@@ -9,11 +9,9 @@ let audio = document.getElementById("backgroundAudio");
 audio.volume = 0.1;
 
 //Objects to store passenger data
-//image: The image element in game.html
-//crossed: What side of the river the entity is on (false = left, true = right) 
 let wolf = {
-    image: document.getElementById("wolf"),
-    crossed: false
+    image: document.getElementById("wolf"), //image: The image element in game.html
+    crossed: false                          //crossed: What side of the river the entity is on (false = left, true = right)
 };
 wolf.image.style.position = "relative";
 wolf.image.style.left = "0px";
